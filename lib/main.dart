@@ -14,6 +14,8 @@ class _HomeState extends State<Home> {
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
 
+  final colorDefault = Colors.black;
+
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String _infoText = "Informe seus dados";
@@ -60,7 +62,7 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           title: Text("Calculadora imc"),
           centerTitle: true,
-          backgroundColor: Colors.green,
+          backgroundColor: colorDefault,
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.refresh),
@@ -77,17 +79,17 @@ class _HomeState extends State<Home> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Icon(
-                    Icons.person_outline,
+                    Icons.face,
                     size: 120,
-                    color: Colors.green,
+                    color: colorDefault,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         labelText: "Peso(kg)",
-                        labelStyle: TextStyle(color: Colors.green)),
+                        labelStyle: TextStyle(color: Colors.black)),
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.black, fontSize: 25),
+                    style: TextStyle(color: colorDefault, fontSize: 25),
                     controller: weightController,
                     // ignore: missing_return
                     validator: (value) {
@@ -100,7 +102,7 @@ class _HomeState extends State<Home> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                           labelText: "Altura(cm)",
-                          labelStyle: TextStyle(color: Colors.green)),
+                          labelStyle: TextStyle(color: colorDefault)),
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black, fontSize: 25),
                       controller: heightController,
@@ -124,14 +126,14 @@ class _HomeState extends State<Home> {
                           "Calcular",
                           style: TextStyle(color: Colors.white, fontSize: 25.0),
                         ),
-                        color: Colors.green,
+                        color: colorDefault,
                       ),
                     ),
                   ),
                   Text(
                     _infoText,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25),
+                    style: TextStyle(color: colorDefault, fontSize: 25),
                   )
                 ],
               ),
